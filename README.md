@@ -16,43 +16,43 @@ A Retrieval-Augmented Generation (RAG) system built with LangChain and LangGraph
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                      User Query                              │
-│            "Where can I find sushi in Seattle?"              │
+│                      User Query                             │
+│            "Where can I find sushi in Seattle?"             │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   Query Parser (LLM)                         │
-│              Extracts: city="Seattle", dish="sushi"          │
+│                   Query Parser (LLM)                        │
+│              Extracts: city="Seattle", dish="sushi"         │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                  Web Scraper Module                          │
-│    ┌──────────┐  ┌──────────┐  ┌──────────────────┐        │
-│    │   Yelp   │  │  Google  │  │  Generic Scraper │        │
-│    │   API    │  │  Places  │  │   (Fallback)     │        │
-│    └──────────┘  └──────────┘  └──────────────────┘        │
+│                  Web Scraper Module                         │
+│    ┌──────────┐  ┌──────────┐  ┌──────────────────┐         │
+│    │   Yelp   │  │  Google  │  │  Generic Scraper │         │
+│    │   API    │  │  Places  │  │   (Fallback)     │         │
+│    └──────────┘  └──────────┘  └──────────────────┘         │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   Vector Store (FAISS)                       │
-│           Embeds restaurant data using OpenAI                │
-│           Enables semantic similarity search                 │
+│                   Vector Store (FAISS)                      │
+│           Embeds restaurant data using OpenAI               │
+│           Enables semantic similarity search                │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│              LangGraph Agent / RAG Chain                     │
-│    Retrieves relevant restaurants & generates response       │
+│              LangGraph Agent / RAG Chain                    │
+│    Retrieves relevant restaurants & generates response      │
 └─────────────────────┬───────────────────────────────────────┘
                       │
                       ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                   Final Response                             │
-│   "Here are the top 5 sushi restaurants in Seattle:         │
-│    1. Sushi Kashiba - ⭐ 4.8 (2,341 reviews)..."            │
+|                    Final Response                           │
+│    Here are the top 5 sushi restaurants in Seattle:         │
+│        1.Sushi Kashiba -  4.8 (2,341 reviews)...            │                                      
 └─────────────────────────────────────────────────────────────┘
 ```
 
